@@ -23,9 +23,9 @@
 #endif
 
 #define LOG_INPUT               0
-#define MANUAL_TUNING           0
-#define MANUAL_TUNING_SERIAL    0
-#define LOG_PID_CONSTANTS       0 //MANUAL_TUNING must be 1
+#define MANUAL_TUNING           1
+#define MANUAL_TUNING_SERIAL    1
+#define LOG_PID_CONSTANTS       1 //MANUAL_TUNING must be 1
 #define MOVE_BACK_FORTH         0
 #define MIN_ABS_SPEED           1
 
@@ -49,15 +49,15 @@ float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gra
 
 //PID
 #define YPR_OUTPUT_SELECT    1
-#define SAMPLE_TIME          3
+#define SAMPLE_TIME          5
 
 #if MANUAL_TUNING
 double prevKp, prevKi, prevKd;
 #endif
 
 //double kp=60, ki=240, kd=1.23;
-double kp=57, ki=240, kd=2.0;
-double originalSetpoint = 169.43;  // for vertical orientation (IMU board)
+double kp=35, ki=200, kd=1.12;
+double originalSetpoint = 170.73;  // for vertical orientation (IMU board)
 double setpoint = originalSetpoint;
 double movingAngleOffset = 0.3;
 double input, output, diffPoint;
